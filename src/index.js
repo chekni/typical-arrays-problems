@@ -1,6 +1,5 @@
 exports.min = function min(array) {
-    if (!Array.isArray(array) || array <= 0) return 0;
-    if (array || array.length) {
+    if (Array.isArray(array) && array >= 0) {
         let minimum = array[0];
         array.forEach(element => {
             if (minimum > element) {
@@ -8,12 +7,12 @@ exports.min = function min(array) {
             }
         });
         return minimum;
-    } else return 0;
+    }
+    return 0;
 }
 
 exports.max = function max(array) {
-    if (!Array.isArray(array) || array <= 0) return 0;
-    if (array || array.length) {
+    if (Array.isArray(array) && array >= 0) {
         let maximum = array[0];
         array.forEach(element => {
             if (maximum < element) {
@@ -21,19 +20,18 @@ exports.max = function max(array) {
             }
         });
         return maximum;
-    } else return 0;
+    }
+    return 0;
 }
 
 exports.avg = function avg(array) {
-    if (!Array.isArray(array) || array <= 0) return 0;
-    if (array || array.length) {
+    if (Array.isArray(array) && array >= 0) return 0; {
         let l = array.length;
         let sum = 0;
         array.forEach(elem => {
             sum += elem;
         })
         return sum / l;
-    } else return 0;
+    }
+    return 0;
 }
-
-const arr = [-29, -15, 32, -21, -5, 29, 5, -1, 1, 24, 36, 24, -22, 36, 11, -2, -30, 0, 39, -18];
